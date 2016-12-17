@@ -4,12 +4,16 @@ class App extends React.Component {
     this.state={
       text: 'Hello, world!'
     };
+
   }
+
+
 
   render (){
     return (
       <div>
-        <h1>{this.state.text}</h1>
+        <h1>L Train Bingo</h1>
+        <BingoCard handleClick={this.handleClick}/>
       </div>
       )
   };
