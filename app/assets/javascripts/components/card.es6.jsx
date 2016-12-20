@@ -29,7 +29,7 @@ class Card extends React.Component {
 
   render() {
     return (
-      <td className={this.bingoSquare()} >
+      <td onClick={this.handleClick.bind(this)} className={this.bingoSquare()} >
         <p ref={this.props.info.id}>{this.props.info.subject}</p>
       </td>
     );
