@@ -20,14 +20,17 @@ class Card extends React.Component {
     };
   }
 
+  handleSubmit(e) {
+    debugger;
+    e.preventDefault();
+    var bingoSquareID = this.props.info.id;
+    console.log('I work');
+  }
+
   render() {
     return (
-      <td className={this.bingoSquare()} onClick={this.handleClick.bind(this)}>
+      <td className={this.bingoSquare()} >
         <p ref={this.props.info.id}>{this.props.info.subject}</p>
-        <form onSubmit={this.handleSubmit}>
-          <input ref="id" type="hidden" value={this.props.info.id}/>
-          <input className="submit-bingo-square" type='submit' value='Bingo'/><br/>
-        </form>
       </td>
     );
   }
