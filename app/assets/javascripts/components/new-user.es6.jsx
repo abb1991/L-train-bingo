@@ -14,11 +14,12 @@ class NewUser extends React.Component {
 
   createUser(e){
     e.preventDefault();
-    var username = this.refs.username.value
+    var username = this.refs.username.value;
+    var password = this.refs.password.value;
     $.ajax({
       url: '/users/new',
       method: 'POST',
-      data: {newUser: {name: username}}
+      data: {newUser: {name: username, password: password}}
     }).done((response) => {
       console.log(response)
     })
@@ -33,6 +34,8 @@ class NewUser extends React.Component {
             <form onSubmit={this.createUser.bind(this)}>
               <label>username:</label>
               <input type="text" name="name" ref="username"></input>
+              <label>password:</label>
+              <input type="password" name="password" ref="password"></input>
               <input type="submit" value="sign up"/>
             </form>
            : null}

@@ -10,6 +10,6 @@ class UsersController < ApplicationController
   end
 
   def permit_params
-    params.require(:newUser).permit(:name)
+    params.require(:newUser).permit(:name, :password)
   end
 end
