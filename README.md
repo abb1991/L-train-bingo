@@ -1,24 +1,7 @@
-# README
+# L Train Bingo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is designed as create-your-own bingo card and share/play with friends across the internet. It's designed with a Ruby on Rails API and a React.js single-page web app for quick and seemless user interaction. Rather than just checking off a square, users can upload media (currently just photos) to prove that they've earned their bingo square.
 
-Things you may want to cover:
+This application is still under construction and more extensive documentation is coming.
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
