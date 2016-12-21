@@ -33,39 +33,36 @@ class BingoCard extends React.Component {
 
 
   render() {
-
-    var self = this
-
     return (
       <table>
         <tbody>
           <tr>
           {this.state.cards.slice(0,5).map(function(card,i) {
-            return <Card info={card} key={i} handleClick={self.props.handleClick}/>
+            return <Card info={card} key={i} />
           })
         }
           </tr>
           <tr>
           {this.state.cards.slice(5,10).map(function(card,i) {
-            return <Card info={card} key={i} handleClick={self.props.handleClick}/>
+            return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
           {this.state.cards.slice(10,15).map(function(card,i) {
-            return <Card info={card} key={i} handleClick={self.props.handleClick}/>
+            return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
           {this.state.cards.slice(15,20).map(function(card,i) {
-            return <Card info={card} key={i} handleClick={self.props.handleClick}/>
+            return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
           {this.state.cards.slice(20,25).map(function(card,i) {
-            return <Card info={card} key={i} handleClick={self.props.handleClick}/>
+            return <Card info={card} key={i}/>
           })
         }
           </tr>
