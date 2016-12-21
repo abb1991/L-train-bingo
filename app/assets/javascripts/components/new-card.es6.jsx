@@ -11,14 +11,6 @@ class NewCard extends React.Component {
     this.setState({card: this.refs.bingoText.value,
                   id: this.props.id});
     var bingoCard = this.state
-
-    // $.ajax({
-    //   url: 'game',
-    //   method: 'POST',
-    //   data: {data: bingoCard}
-    // }).done((response) => {
-    //   // updated card comes back?
-    // })
   }
 
   render(){

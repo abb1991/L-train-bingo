@@ -8,9 +8,21 @@ class NewUser extends React.Component {
   }
 
   signUp(e) {
-  e.preventDefault();
-  this.setState({showSignUp: true});
-}
+    e.preventDefault();
+    this.setState({showSignUp: true});
+  }
+
+  createUser(e){
+    e.preventDefault();
+    var username = this.refs.username.value
+    $.ajax({
+      url: '/users/new',
+      method: 'POST',
+      data: {newUser: {name: username}}
+    }).done((response) => {
+      console.log(response)
+    })
+  }
 
   render(){
     return(
@@ -18,9 +30,9 @@ class NewUser extends React.Component {
         <a href='/' onClick={this.signUp.bind(this)}>sign up</a>
         <div>
           { this.state.showSignUp ?
-            <form>
+            <form onSubmit={this.createUser.bind(this)}>
               <label>username:</label>
-              <input type="text" name="name"></input>
+              <input type="text" name="name" ref="username"></input>
               <input type="submit" value="sign up"/>
             </form>
            : null}

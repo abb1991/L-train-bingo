@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def new
     @user = User.new(permit_params)
     if @user.save
@@ -10,6 +10,6 @@ class UserController < ApplicationController
   end
 
   def permit_params
-    params.require(:user).permit(:name)
+    params.require(:newUser).permit(:name)
   end
 end
