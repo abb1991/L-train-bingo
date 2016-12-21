@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'react-rails'
 gem 'pry'
 gem 'faker'
+gem 'bcrypt'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
