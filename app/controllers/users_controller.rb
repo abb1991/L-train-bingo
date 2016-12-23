@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   private
 
   def permit_params
-    binding.pry
     params.require(:newUser).permit(:name, :password)
   end
 

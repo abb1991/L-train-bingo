@@ -10,6 +10,6 @@ end
 games = Game.all
 games.each do |game|
   10.times do
-    Card.create(game_id: game.id, description: Faker::Lorem.sentence)
+    Card.create(game_id: game.id, description: Faker::Lorem.sentence, complete: false)
   end
 end
