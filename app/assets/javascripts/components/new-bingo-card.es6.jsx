@@ -13,14 +13,14 @@ class NewBingoCard extends React.Component {
 
   }
 
-// extract all the user creared bingo squares and send them back to the server via AJAX
+// extract all the user created bingo squares and send them back to the server via AJAX
 
   createNewCard(e) {
-    // debugger;
     e.preventDefault();
-    var textarea = this.refs.entryTextarea
-    console.log(e)
-    console.log(this)
+    var textarea = this.refs.entryTextarea;
+    console.log(e);
+    console.log(this);
+    console.log(textarea);
   }
 
   render(){

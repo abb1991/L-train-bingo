@@ -13,7 +13,6 @@ class Card extends React.Component {
   }
 
   sendCard(e) {
-    debugger;
     e.preventDefault();
     this.setState({complete: !this.state.complete})
     var cardComplete = this.state.complete
@@ -40,7 +39,7 @@ class Card extends React.Component {
       <td onClick={this.handleClick.bind(this)} className={this.bingoSquare()} >
         <p ref={this.props.info.id}>{this.props.info.subject}</p>
         <div>
-          {this.state.submitCard ?
+          {(this.state.submitCard && !this.state.complete) ?
             <input onClick={this.sendCard.bind(this)} type="submit" value="confirm" />
           :null }
         </div>
