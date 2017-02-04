@@ -3,7 +3,7 @@ class NewBingoCard extends React.Component {
     super();
     this.state={
       showCard: false,
-      showSubmit: false,
+      showSubmit: true,
       squares: {}
     }
     this.updateSquares = this.updateSquares.bind(this)
@@ -28,7 +28,14 @@ class NewBingoCard extends React.Component {
 
   createNewCard(e) {
     e.preventDefault();
-    var textarea = this.refs.entryTextarea;
+    var bingoCard = this.state.squares
+    $.ajax({
+      url: '/cards',
+      method: 'POST',
+      data: {newCard: {card: bingoCard}}
+    }).done((response) => {
+      console.log(response)
+    })
   }
 
   render(){

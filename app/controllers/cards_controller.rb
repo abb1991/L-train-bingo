@@ -1,4 +1,10 @@
 class CardsController < ApplicationController
+
+  def new
+    binding.pry
+    squares = params[:newCard][:card]
+  end
+
   def update
     card = Card.find_by(id: params[:id])
     if card
@@ -12,5 +18,6 @@ class CardsController < ApplicationController
 
   def permit_params
     params.require(:updateCard).permit(:complete)
+    # params.require(:newCard).permit(:card)
   end
 end
