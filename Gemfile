@@ -21,6 +21,8 @@ gem 'pry'
 gem 'faker'
 gem 'bcrypt'
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

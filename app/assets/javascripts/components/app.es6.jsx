@@ -9,11 +9,11 @@ class App extends React.Component {
 
   render (){
     return (
-      <div>
+      <div className="container">
         <NewUser />
         <NewBingoCard />
         <h1>L Train Bingo</h1>
-        <BingoCard />
+        <BingoCard/>
       </div>
       )
   };

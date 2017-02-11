@@ -32,7 +32,7 @@ class NewBingoCard extends React.Component {
     $.ajax({
       url: '/cards',
       method: 'POST',
-      data: {newCard: {card: bingoCard}}
+      data: {newCard: bingoCard}
     }).done((response) => {
       console.log(response)
     })
@@ -44,7 +44,7 @@ class NewBingoCard extends React.Component {
         <a href="/" onClick={this.showNewCard.bind(this) }>New Game</a>
         <div>{this.state.showCard ?
           <form onSubmit={this.createNewCard.bind(this)} ref="entryTextarea">
-            <table>
+            <table className="new-card">
                 <tbody>
                   {[1,2,3,4,5].map(function(i){
                     return (

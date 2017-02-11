@@ -1,8 +1,8 @@
 class CardsController < ApplicationController
 
   def new
+    squares = permit_params
     binding.pry
-    squares = params[:newCard][:card]
   end
 
   def update
@@ -17,7 +17,7 @@ class CardsController < ApplicationController
   private
 
   def permit_params
-    params.require(:updateCard).permit(:complete)
-    # params.require(:newCard).permit(:card)
+    # params.require(:updateCard).permit(:complete)
+    params.permit(:newCard).require(:newCard)
   end
 end
