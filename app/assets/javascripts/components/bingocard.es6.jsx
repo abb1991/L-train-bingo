@@ -34,7 +34,7 @@ class BingoCard extends React.Component {
 
   render() {
     return (
-      <table className="table">
+      <table className="table-responsive table-bordered">
         <tbody>
           <tr>
           {this.state.cards.slice(0,5).map(function(card,i) {

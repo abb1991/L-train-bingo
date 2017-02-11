@@ -32,10 +32,14 @@ class NewUser extends React.Component {
         <div>
           { this.state.showSignUp ?
             <form onSubmit={this.createUser.bind(this)}>
-              <label>username:</label>
-              <input type="text" name="name" ref="username"></input>
-              <label>password:</label>
-              <input type="password" name="password" ref="password"></input>
+              <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="text" className="form-control" name="name" ref="username" placeholder="username"/>
+              </div>
+              <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" className="form-control" name="password" ref="password" placeholder="Password"/>
+              </div>
               <input type="submit" value="sign up"/>
             </form>
            : null}

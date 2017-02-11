@@ -28,9 +28,9 @@ class Card extends React.Component {
 
   bingoSquare() {
     if(this.state.complete) {
-      return 'bingo-true'
+      return 'bg-success'
     } else {
-      return 'bingo-false'
+      return ''
     };
   }
 
