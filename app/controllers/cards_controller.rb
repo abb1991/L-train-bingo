@@ -9,7 +9,6 @@ class CardsController < ApplicationController
         render json: {error: 'Something went wrong'}
       end
     end
-    binding.pry
     cards = game.cards
     render json: cards
   end
