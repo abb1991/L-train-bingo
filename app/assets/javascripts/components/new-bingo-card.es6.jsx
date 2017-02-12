@@ -32,7 +32,7 @@ class NewBingoCard extends React.Component {
     $.ajax({
       url: '/cards',
       method: 'POST',
-      data: {newCard: bingoCard}
+      data: {card: {newCard: bingoCard}}
     }).done((response) => {
       console.log(response)
     })
