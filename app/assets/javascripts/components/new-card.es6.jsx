@@ -15,7 +15,7 @@ class NewCard extends React.Component {
 
     return (
       <td onKeyUp={this.handleKeyUp.bind(this)}>
-          <textarea ref="bingoText" placeholder={this.props.id} ></textarea>
+          <textarea className="form-control text-center" maxLength="60" rows="5" ref="bingoText" placeholder={this.props.id} ></textarea>
       </td>
     )
   }

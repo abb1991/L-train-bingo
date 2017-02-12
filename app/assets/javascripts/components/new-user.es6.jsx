@@ -2,7 +2,7 @@ class NewUser extends React.Component {
   constructor() {
     super();
     this.state={
-      showSignUp: false
+      showSignUp: true
     }
 
   }
@@ -33,14 +33,12 @@ class NewUser extends React.Component {
           { this.state.showSignUp ?
             <form onSubmit={this.createUser.bind(this)}>
               <div className="input-group">
-                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
                 <input id="email" type="text" className="form-control" name="name" ref="username" placeholder="username"/>
               </div>
               <div className="input-group">
-                <span className="input-group-addon"><i className="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" className="form-control" name="password" ref="password" placeholder="Password"/>
+                <input id="password" type="password" className="form-control" name="password" ref="password" placeholder="password"/>
               </div>
-              <input type="submit" value="sign up"/>
+              <input className="btn btn-default" type="submit" value="sign up"/>
             </form>
            : null}
          </div>

@@ -59,7 +59,7 @@ class NewBingoCard extends React.Component {
                 }
                 </tbody>
             </table>
-            {this.state.showSubmit ? <input type="submit" value="submit"/> : null}
+            {this.state.showSubmit ? <input className="btn btn-default" type="submit" value="submit"/> : null}
           </form>
           : null
         }
