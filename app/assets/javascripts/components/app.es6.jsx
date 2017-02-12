@@ -2,7 +2,6 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      text: 'Hello, world!'
     };
 
   }
@@ -12,24 +11,28 @@ class App extends React.Component {
       <div className="container">
           <ul className="nav nav-tabs">
             <li className="nav-item">
-              <a className="nav-link active" data-toggle="tab" href="#newUser">New User</a>
+              <a className="nav-link active" data-toggle="tab" href="#newUser" role="tab">New User</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="tab" href="#newBingoCard">New Bingo Card</a>
+              <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Bingo Card</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-toggle="tab" href="#bingoCard" role="tab">Game</a>
             </li>
           </ul>
 
           <div className="tab-content">
-            <div id="newUser" className="tab-pane fade in active">
+            <div id="newUser" className="tab-pane active" role="tabpanel">
+              <p>hello</p>
               <NewUser />
             </div>
-            <div id="newBingoCard" className="tab-pane fade">
+            <div id="newBingoCard" className="tab-pane fade" role="tabpanel">
               <NewBingoCard />
             </div>
+            <div id="bingoCard" className="tab-pane fade" role="tabpanel">
+              <BingoCard/>
+            </div>
           </div>
-        <h1>L Train Bingo</h1>
-        <p><span className="glyphicon glyphicon-asterisk"></span><br/></p>
-        <BingoCard/>
       </div>
       )
   };

@@ -2,7 +2,7 @@ class NewUser extends React.Component {
   constructor() {
     super();
     this.state={
-      showSignUp: false
+      showSignUp: true
     }
 
   }
