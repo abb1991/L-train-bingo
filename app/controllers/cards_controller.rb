@@ -2,8 +2,16 @@ class CardsController < ApplicationController
 
   def new
     squares =  params[:card][:newCard].to_unsafe_h
-    game = Game.new(user_id: current_user.id)
-    bingo_card = nil
+    game = Game.create(user_id: current_user.id)
+    squares.each do |id, desc|
+      card = Card.new(game_id: game.id, description: desc)
+      if !card.save
+        render json: {error: 'Something went wrong'}
+      end
+    end
+    binding.pry
+    cards = game.cards
+    render json: cards
   end
 
   def update
