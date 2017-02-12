@@ -17,6 +17,4 @@ class UsersController < ApplicationController
     params.require(:newUser).permit(:name, :password)
   end
 
-
-
 end

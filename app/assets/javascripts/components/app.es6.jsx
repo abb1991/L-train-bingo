@@ -1,10 +1,17 @@
 class App extends React.Component {
-  constructor(){
+  constructor(props){
     super();
     this.state={
+      user: props.user
     };
-
+    this.userLoggedIn = this.userLoggedIn.bind(this)
   }
+
+  userLoggedIn(currentUser){
+    this.setState({user: currentUser})
+  }
+
+
 
   render (){
     return (
@@ -23,8 +30,11 @@ class App extends React.Component {
 
           <div className="tab-content">
             <div id="newUser" className="tab-pane active" role="tabpanel">
-              <p>hello</p>
-              <NewUser />
+              {this.state.user.logged_in ?
+                <UserPage data={this.state.user}/>
+              :
+                <NewUser userLoggedIn={this.userLoggedIn}/>
+              }
             </div>
             <div id="newBingoCard" className="tab-pane fade" role="tabpanel">
               <NewBingoCard />

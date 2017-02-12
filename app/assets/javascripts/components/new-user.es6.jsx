@@ -21,8 +21,8 @@ class NewUser extends React.Component {
       method: 'POST',
       data: {newUser: {name: username, password: password}}
     }).done((response) => {
-      console.log(response)
-    })
+      this.props.userLoggedIn(response)
+    }.bind(this))
   }
 
   render(){
