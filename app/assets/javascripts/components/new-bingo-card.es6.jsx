@@ -2,17 +2,10 @@ class NewBingoCard extends React.Component {
   constructor(){
     super();
     this.state={
-      showCard: false,
       showSubmit: true,
       squares: {}
     }
     this.updateSquares = this.updateSquares.bind(this)
-  }
-
-  showNewCard(e){
-    e.preventDefault();
-    this.setState({showCard: !this.state.showCard});
-
   }
 
   updateSquares(square) {
@@ -21,10 +14,7 @@ class NewBingoCard extends React.Component {
     if(filledSquaresNum == 25) {
       this.setState({showSubmit: true});
     }
-    console.log(this.state.squares)
   }
-
-// extract all the user created bingo squares and send them back to the server via AJAX
 
   createNewCard(e) {
     e.preventDefault();
@@ -41,8 +31,6 @@ class NewBingoCard extends React.Component {
   render(){
     return (
       <section>
-        <a href="/" onClick={this.showNewCard.bind(this) }>New Game</a>
-        <div>{this.state.showCard ?
           <form onSubmit={this.createNewCard.bind(this)} ref="entryTextarea">
             <table className="new-card">
                 <tbody>
@@ -59,11 +47,8 @@ class NewBingoCard extends React.Component {
                 }
                 </tbody>
             </table>
-            {this.state.showSubmit ? <input className="btn btn-default" type="submit" value="submit"/> : null}
+            {this.state.showSubmit ? <input className="btn btn-default" type="submit" value="create"/> : null}
           </form>
-          : null
-        }
-        </div>
       </section>
       );
   }
