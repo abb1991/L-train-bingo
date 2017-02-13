@@ -34,8 +34,8 @@ class NewBingoCard extends React.Component {
       method: 'POST',
       data: {card: {newCard: bingoCard}}
     }).done((response) => {
-      console.log(response)
-    })
+      this.props.updateCards(response)
+    }.bind(this))
   }
 
   render(){

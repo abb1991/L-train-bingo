@@ -16,7 +16,6 @@ class CardsController < ApplicationController
   def update
     card = Card.find_by(id: params[:id])
     if card
-      binding.pry
       card.complete = permit_params
     else
       render json: {error: 'Something went wrong'}

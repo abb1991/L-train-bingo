@@ -1,14 +1,20 @@
 class App extends React.Component {
   constructor(props){
-    super();
+    super(props);
     this.state={
-      user: props.user
+      user: props.user,
+      cards: props.cards || []
     };
     this.userLoggedIn = this.userLoggedIn.bind(this)
+    this.updateCards = this.updateCards.bind(this)
   }
 
   userLoggedIn(currentUser){
     this.setState({user: currentUser})
+  }
+
+  updateCards(response){
+    this.setState({cards: response})
   }
 
 
@@ -37,13 +43,14 @@ class App extends React.Component {
               }
             </div>
             <div id="newBingoCard" className="tab-pane fade" role="tabpanel">
-              <NewBingoCard />
+              <NewBingoCard updateCards={this.updateCards}/>
             </div>
             <div id="bingoCard" className="tab-pane fade" role="tabpanel">
-              <BingoCard/>
+              <BingoCard cards={this.state.cards}/>
             </div>
           </div>
       </div>
       )
   };
 }
+
