@@ -1,6 +1,6 @@
 class BingoCard extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
       cards: [{subject: "I am a card", id: 1},
       {subject: "I am a card, too", id: 2},
@@ -31,37 +31,36 @@ class BingoCard extends React.Component {
     };
   }
 
-
   render() {
     return (
       <table className="table-bordered">
         <tbody>
           <tr>
-          {this.state.cards.slice(0,5).map(function(card,i) {
+          {this.props.cards.slice(0,5).map(function(card,i) {
             return <Card info={card} key={i} />
           })
         }
           </tr>
           <tr>
-          {this.state.cards.slice(5,10).map(function(card,i) {
+          {this.props.cards.slice(5,10).map(function(card,i) {
             return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
-          {this.state.cards.slice(10,15).map(function(card,i) {
+          {this.props.cards.slice(10,15).map(function(card,i) {
             return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
-          {this.state.cards.slice(15,20).map(function(card,i) {
+          {this.props.cards.slice(15,20).map(function(card,i) {
             return <Card info={card} key={i}/>
           })
         }
           </tr>
           <tr>
-          {this.state.cards.slice(20,25).map(function(card,i) {
+          {this.props.cards.slice(20,25).map(function(card,i) {
             return <Card info={card} key={i}/>
           })
         }

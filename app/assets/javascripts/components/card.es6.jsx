@@ -37,7 +37,7 @@ class Card extends React.Component {
   render() {
     return (
       <td onClick={this.handleClick.bind(this)} className={this.bingoSquare()} >
-        <p ref={this.props.info.id}>{this.props.info.subject}</p>
+        <p ref={this.props.info.id}>{this.props.info.description}</p>
         <div>
           {(this.state.submitCard && !this.state.complete) ?
             <input onClick={this.sendCard.bind(this)} type="submit" value="confirm" />

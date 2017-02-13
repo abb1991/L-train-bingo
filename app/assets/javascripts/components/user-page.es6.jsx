@@ -7,7 +7,6 @@ class UserPage extends React.Component {
   }
 
   render(){
-    debugger;
     return(
       <div>
         <h1>Hello, {this.props.data.user.name}</h1>
