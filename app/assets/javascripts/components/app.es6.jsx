@@ -24,13 +24,13 @@ class App extends React.Component {
       <div className="container">
           <ul className="nav nav-tabs">
             <li className="nav-item">
-              <a className="nav-link active" data-toggle="tab" href="#newUser" role="tab">New User</a>
+              <a className="nav-link active" data-toggle="tab" href="#newUser" role="tab">Profile</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Bingo Card</a>
+              <a className="nav-link" data-toggle="tab" href="#bingoCard" role="tab">Games</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="tab" href="#bingoCard" role="tab">Game</a>
+              <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Game</a>
             </li>
           </ul>
 
