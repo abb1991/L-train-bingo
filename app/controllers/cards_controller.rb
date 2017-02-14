@@ -16,7 +16,8 @@ class CardsController < ApplicationController
   def update
     card = Card.find_by(id: params[:id])
     if card
-      card.complete = permit_params
+      card.complete = permit_params_update
+      card.save
     else
       render json: {error: 'Something went wrong'}
     end
@@ -31,12 +32,4 @@ class CardsController < ApplicationController
   def permit_params_new
     params.require(:card).permit(:newCard)
   end
-
-  # def current_user
-  #   @current_user ||= User.find_by_id(session[:user])
-  # end
-
-  # def logged_in?
-  #   current_user != nil
-  # end
 end

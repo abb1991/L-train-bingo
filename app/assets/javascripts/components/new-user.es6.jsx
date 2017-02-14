@@ -12,9 +12,9 @@ class NewUser extends React.Component {
     var username = this.refs.username.value;
     var password = this.refs.password.value;
     $.ajax({
-      url: '/users/new',
+      url: '/users/login',
       method: 'POST',
-      data: {newUser: {name: username, password: password}}
+      data: {user: {name: username, password: password}}
     }).done((response) => {
       this.props.userLoggedIn(response)
     }.bind(this))
