@@ -32,7 +32,7 @@ class NewUser extends React.Component {
     $.ajax({
       url: '/users/new',
       method: 'POST',
-      data: {user: {name: username, password: password}}
+      data: {newUser: {name: username, password: password}}
     }).done((response) => {
       this.props.userLoggedIn(response)
     }.bind(this))
