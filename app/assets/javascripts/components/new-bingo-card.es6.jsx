@@ -3,6 +3,7 @@ class NewBingoCard extends React.Component {
     super();
     this.state={
       showSubmit: true,
+      submitted: false,
       squares: {}
     }
     this.updateSquares = this.updateSquares.bind(this)
@@ -18,7 +19,9 @@ class NewBingoCard extends React.Component {
 
   createNewCard(e) {
     e.preventDefault();
+    this.setState({submitted: true})
     var bingoCard = this.state.squares
+
     $.ajax({
       url: '/cards',
       method: 'POST',
@@ -38,7 +41,7 @@ class NewBingoCard extends React.Component {
                     return (
                    <tr key={i} >
                         {[1,2,3,4,5].map(function(j) {
-                          return <NewCard onUpdateSquares={this.updateSquares} id={i.toString() + j.toString()} key={i.toString() + j.toString()} />
+                          return <NewCard submitted={this.state.submitted} onUpdateSquares={this.updateSquares} id={i.toString() + j.toString()} key={i.toString() + j.toString()} />
                         }.bind(this))
                       }
                     </tr>

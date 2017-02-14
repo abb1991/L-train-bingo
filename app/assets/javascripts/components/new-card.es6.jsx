@@ -9,13 +9,15 @@ class NewCard extends React.Component {
     var bingoCard = {card: this.refs.bingoText.value,
                   id: this.props.id}
     this.props.onUpdateSquares(bingoCard)
+    if(this.props.submitted){
+      this.refs.bingoText.value = ""
+    }
   }
 
   render(){
-
     return (
       <td onKeyUp={this.handleKeyUp.bind(this)}>
-          <textarea className="form-control text-center" maxLength="60" rows="5" ref="bingoText" placeholder={this.props.id} ></textarea>
+          <textarea className="form-control text-center" maxLength="60" rows="5" ref="bingoText"></textarea>
       </td>
     )
   }

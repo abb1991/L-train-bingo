@@ -27,10 +27,10 @@ class App extends React.Component {
               <a className="nav-link active" data-toggle="tab" href="#newUser" role="tab">Profile</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Game</a>
+              <a className="nav-link" data-toggle="tab" href="#bingoCard" role="tab">Games</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" data-toggle="tab" href="#bingoCard" role="tab">Games</a>
+              <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Game</a>
             </li>
           </ul>
 

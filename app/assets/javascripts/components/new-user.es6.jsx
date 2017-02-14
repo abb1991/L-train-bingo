@@ -7,11 +7,6 @@ class NewUser extends React.Component {
 
   }
 
-  signUp(e) {
-    e.preventDefault();
-    this.setState({showSignUp: true});
-  }
-
   createUser(e){
     e.preventDefault();
     var username = this.refs.username.value;
@@ -28,9 +23,7 @@ class NewUser extends React.Component {
   render(){
     return(
       <div>
-        <a href='/' onClick={this.signUp.bind(this)}>sign up</a>
         <div>
-          { this.state.showSignUp ?
             <form onSubmit={this.createUser.bind(this)}>
               <div className="input-group">
                 <input id="email" type="text" className="form-control" name="name" ref="username" placeholder="username"/>
@@ -38,10 +31,10 @@ class NewUser extends React.Component {
               <div className="input-group">
                 <input id="password" type="password" className="form-control" name="password" ref="password" placeholder="password"/>
               </div>
-              <input className="btn btn-default" type="submit" value="sign up"/>
+              <input className="btn btn-default" type="submit" value="sign in"/>
             </form>
-           : null}
          </div>
+         <a href="/">create new account</a>
        </div>
       );
   }
