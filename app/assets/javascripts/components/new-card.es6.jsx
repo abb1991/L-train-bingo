@@ -9,9 +9,6 @@ class NewCard extends React.Component {
     var bingoCard = {card: this.refs.bingoText.value,
                   id: this.props.id}
     this.props.onUpdateSquares(bingoCard)
-    if(this.props.submitted){
-      this.refs.bingoText.value = ""
-    }
   }
 
   render(){
