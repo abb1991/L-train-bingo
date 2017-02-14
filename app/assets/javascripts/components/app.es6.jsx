@@ -3,7 +3,8 @@ class App extends React.Component {
     super(props);
     this.state={
       user: props.user,
-      cards: props.cards || []
+      cards: props.cards || [],
+      games: props.games || []
     };
     this.userLoggedIn = this.userLoggedIn.bind(this)
     this.updateCards = this.updateCards.bind(this)
@@ -46,7 +47,7 @@ class App extends React.Component {
               <NewBingoCard updateCards={this.updateCards}/>
             </div>
             <div id="bingoCard" className="tab-pane fade" role="tabpanel">
-              <BingoCard cards={this.state.cards}/>
+              <BingoCard cards={this.state.cards} games={this.state.games} />
             </div>
           </div>
       </div>

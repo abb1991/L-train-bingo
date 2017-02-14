@@ -21,7 +21,10 @@ class NewBingoCard extends React.Component {
     e.preventDefault();
     this.setState({submitted: true})
     var bingoCard = this.state.squares
-
+    var cardTextAreas = document.getElementsByClassName('text-center')
+    for (var i = 0; i < cardTextAreas.length; i++) {
+      cardTextAreas[i].value = '';
+    }
     $.ajax({
       url: '/cards',
       method: 'POST',
