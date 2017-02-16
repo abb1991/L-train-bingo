@@ -17,18 +17,18 @@ ActiveRecord::Schema.define(version: 20161221185136) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "description"
-    t.boolean  "complete"
+    t.boolean  "complete",    default: false
     t.integer  "game_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["game_id"], name: "index_cards_on_game_id", using: :btree
   end
 
   create_table "games", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",      default: "title"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 

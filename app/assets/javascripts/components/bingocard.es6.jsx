@@ -24,9 +24,9 @@ class BingoCard extends React.Component {
             {this.props.games.map(function(game){
               return (
               <li key={game.id} className="list-group-item">
-                <a onClick={self.showBoard} href="/">{game.id}</a>
+                <a onClick={self.showBoard} href="/">{game.title}</a>
                 <div>
-                  <Board game={game} cards={self.props.cards[game.id]}/>
+                  {self.state.show ? <Board game={game} cards={self.props.cards[game.id]}/> : null}
                 </div>
               </li>
               )

@@ -21,6 +21,13 @@ class App extends React.Component {
                    games: response.games})
   }
 
+  signOut(e){
+    e.preventDefault();
+    $.ajax({
+      url: '/users/logout',
+      method: 'get',
+    })
+  }
 
 
   render (){
@@ -35,6 +42,9 @@ class App extends React.Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" data-toggle="tab" href="#newBingoCard" role="tab">New Game</a>
+            </li>
+            <li className="nav-item">
+              <a onClick={this.signOut} className="nav-link" href="#newBingoCard">log out</a>
             </li>
           </ul>
 
