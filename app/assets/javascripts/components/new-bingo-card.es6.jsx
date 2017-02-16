@@ -21,6 +21,8 @@ class NewBingoCard extends React.Component {
     e.preventDefault();
     this.setState({submitted: true})
     var bingoCard = this.state.squares
+    var title = this.refs.title.value
+
     var cardTextAreas = document.getElementsByClassName('text-center')
     for (var i = 0; i < cardTextAreas.length; i++) {
       cardTextAreas[i].value = '';
@@ -28,7 +30,7 @@ class NewBingoCard extends React.Component {
     $.ajax({
       url: '/cards',
       method: 'POST',
-      data: {card: {newCard: bingoCard}}
+      data: {card: {newCard: bingoCard, title: title}}
     }).done((response) => {
       this.props.updateCards(response)
     }.bind(this))
@@ -38,6 +40,7 @@ class NewBingoCard extends React.Component {
     return (
       <section>
           <form onSubmit={this.createNewCard.bind(this)} ref="entryTextarea">
+          <input className="form-control" type="text"placeholder="Game title" ref="title"/>
             <table className="new-card">
                 <tbody>
                   {[1,2,3,4,5].map(function(i){

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(name: params[:user][:name])
+    session[:user_id] = @user.id
     @user = @user.authenticate(params[:user][:password])
     log_in = logged_in?
     if log_in
@@ -20,6 +21,12 @@ class UsersController < ApplicationController
     else
       render json: {error: 'Wrong username or password'}
     end
+  end
+
+  def logout
+    session.delete
+    @user = User.new
+    render component: 'App', props: {user: @user, loggedIn: false}
   end
 
   private
