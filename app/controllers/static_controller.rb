@@ -8,10 +8,10 @@ class StaticController < ApplicationController
         e = {game.id => game.cards}
         @cards = @cards.merge(e)
       end
-      render component: 'App', props: {user: @user, games: @games, cards: @cards}
+      render component: 'App', props: {user: @user, games: @games, cards: @cards, logged_in: true}
     else
       @user = User.new
-      render component: 'App', props: {user: @user}
+      render component: 'App', props: {user: @user, loggedIn: false}
     end
   end
 end

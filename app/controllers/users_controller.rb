@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       log_in = logged_in?
-      render json: {user: @user, logged_in: log_in}
+      render json: {user: @user, loggedIn: log_in}
     else
       render json: {error: "Something went wrong."}
     end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = @user.authenticate(params[:user][:password])
     log_in = logged_in?
     if log_in
-      render json: {user: @user, logged_in: log_in}
+      render json: {user: @user, loggedIn: log_in}
     else
       render json: {error: 'Wrong username or password'}
     end
