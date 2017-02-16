@@ -10,7 +10,6 @@ class BingoCard extends React.Component {
   showBoard(e){
     e.preventDefault();
     this.setState({show: !this.state.show})
-    console.log(this.state.show)
   }
 
   render() {
@@ -18,7 +17,9 @@ class BingoCard extends React.Component {
     var mainGame = this.props.games[0]
     return (
       <div>
-        <Board game={mainGame} cards={this.props.cards[mainGame.id]}/>
+        {this.props.loggedIn ?
+        <Board game={mainGame} cards={this.props.cards[mainGame.id]}/> : null }
+        {this.props.loggedIn ?
         <ul className="list-group">
             {this.props.games.map(function(game){
               return (
@@ -30,7 +31,7 @@ class BingoCard extends React.Component {
               </li>
               )
             })}
-          </ul>
+          </ul> : null }
         </div>
       );
   }

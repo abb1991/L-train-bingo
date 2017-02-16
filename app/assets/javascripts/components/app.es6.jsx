@@ -4,18 +4,21 @@ class App extends React.Component {
     this.state={
       user: props.user,
       cards: props.cards || [],
-      games: props.games || []
+      games: props.games || [],
+      loggedIn: props.loggedIn || false
     };
     this.userLoggedIn = this.userLoggedIn.bind(this)
     this.updateCards = this.updateCards.bind(this)
   }
 
   userLoggedIn(currentUser){
-    this.setState({user: currentUser})
+    this.setState({user: currentUser.user,
+                   loggedIn: currentUser.loggedIn})
   }
 
   updateCards(response){
-    this.setState({cards: response})
+    this.setState({cards: response.cards,
+                   games: response.games})
   }
 
 
@@ -37,7 +40,7 @@ class App extends React.Component {
 
           <div className="tab-content">
             <div id="newUser" className="tab-pane active" role="tabpanel">
-              {this.state.user.logged_in ?
+              {this.state.loggedIn ?
                 <UserPage data={this.state.user}/>
               :
                 <NewUser userLoggedIn={this.userLoggedIn}/>
@@ -47,7 +50,7 @@ class App extends React.Component {
               <NewBingoCard updateCards={this.updateCards}/>
             </div>
             <div id="bingoCard" className="tab-pane fade" role="tabpanel">
-              <BingoCard cards={this.state.cards} games={this.state.games} />
+              <BingoCard loggedIn={this.state.loggedIn} cards={this.state.cards} games={this.state.games} />
             </div>
           </div>
       </div>

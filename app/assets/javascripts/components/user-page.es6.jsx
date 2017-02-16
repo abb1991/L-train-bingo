@@ -9,7 +9,7 @@ class UserPage extends React.Component {
   render(){
     return(
       <div>
-        <h1>Hello, {this.props.data.user.name}</h1>
+        <h1>Hello, {this.props.data.name}</h1>
         <h2>Your games:</h2>
       </div>
       )
