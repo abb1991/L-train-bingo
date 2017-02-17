@@ -2,7 +2,7 @@ class Card extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      complete: false,
+      complete: props.info.complete || false,
       submitCard: false
     }
   }
