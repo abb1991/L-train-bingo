@@ -22,7 +22,6 @@ class NewBingoCard extends React.Component {
     this.setState({submitted: true})
     var bingoCard = this.state.squares
     var title = this.refs.title.value
-
     var cardTextAreas = document.getElementsByClassName('text-center')
     for (var i = 0; i < cardTextAreas.length; i++) {
       cardTextAreas[i].value = '';
