@@ -15,7 +15,7 @@ class BingoCard extends React.Component {
   }
 
   mainGame(e) {
-      e.preventDefault();
+    e.preventDefault();
     var gameId = e.target.getAttribute("href")
     this.props.games.map(function(g){
       if (g.id == gameId) {
