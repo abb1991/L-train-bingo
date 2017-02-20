@@ -10,6 +10,7 @@ class UserPage extends React.Component {
     return(
       <div>
         <h1>Hello, {this.props.data.name}</h1>
+        <SearchFriends />
         <h2>Your games:</h2>
         <Friends friends={this.props.friends} />
       </div>
