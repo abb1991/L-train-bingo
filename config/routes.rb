@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   put '/cards/:id' => 'cards#update'
   post '/cards' => 'cards#new'
   get '/users/logout' => 'users#logout'
+  post '/users/find' => 'users#find'
 
 end

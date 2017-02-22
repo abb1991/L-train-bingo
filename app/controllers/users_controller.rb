@@ -29,6 +29,14 @@ class UsersController < ApplicationController
     render component: 'App', props: {user: @user, loggedIn: false}
   end
 
+  def find
+    @friend = User.find_by(name: params[:user][:name])
+    if !@friend.nil?
+      render json: {friend: @friend}
+    else
+      render json: {error: 'Could not find your friend'}
+    end
+  end
   private
 
   def permit_params_new

@@ -12,7 +12,7 @@ class Friends extends React.Component {
           <h2>Friends list</h2>
           <ul>
             {this.state.friends.map(function(friend){
-              return <li>{friend.name}</li>
+              return <li key={friend.id}>{friend.name}</li>
             })}
           </ul>
         </div>
