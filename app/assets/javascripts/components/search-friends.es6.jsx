@@ -2,8 +2,10 @@ class SearchFriends extends React.Component {
   constructor(){
     super();
     this.state={
-
+      searchFriend: {},
+      showFriend: false
     }
+    this.searchFriends = this.searchFriends.bind(this)
   }
 
   searchFriends(e){
@@ -14,17 +16,29 @@ class SearchFriends extends React.Component {
       method: 'POST',
       data: {user: {name: input}}
     }).done((response) => {
-      console.log(response)
-    })
+      this.setState({searchFriend: response.friend,
+                    showFriend: true})
+    }.bind(this))
   }
 
+  inviteFriend(e) {
+    e.preventDefault();
+    console.log('invited')
+  }
   render(){
     return(
       <div className="form-group">
+      {this.state.showFriend ?
+        <div>
+          <h2>{this.state.searchFriend.name}</h2>
+          <a href='/' onClick={this.inviteFriend}>add friend</a>
+        </div>
+        :
         <form onSubmit={this.searchFriends}>
           <input  className="form-control" placeholder="search for friends"/>
           <input type="submit" value="find friend" />
         </form>
+        }
       </div>
     )
   }
