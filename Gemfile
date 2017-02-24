@@ -20,6 +20,7 @@ gem 'react-rails'
 gem 'pry'
 gem 'faker'
 gem 'bcrypt'
+gem 'jasmine'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
