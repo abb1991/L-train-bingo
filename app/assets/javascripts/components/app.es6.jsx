@@ -3,6 +3,7 @@ class App extends React.Component {
     super(props);
     this.state={
       user: props.user,
+      friends: props.friends || [],
       cards: props.cards || [],
       games: props.games || [],
       loggedIn: props.loggedIn || false
@@ -51,7 +52,7 @@ class App extends React.Component {
           <div className="tab-content">
             <div id="newUser" className="tab-pane active" role="tabpanel">
               {this.state.loggedIn ?
-                <UserPage data={this.state.user}/>
+                <UserPage friends={this.state.friends} data={this.state.user}/>
               :
                 <NewUser userLoggedIn={this.userLoggedIn}/>
               }
