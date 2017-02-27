@@ -4,7 +4,8 @@ class NewBingoCard extends React.Component {
     this.state={
       showSubmit: true,
       submitted: false,
-      squares: {}
+      squares: {},
+      showAddFriends: false
     }
     this.updateSquares = this.updateSquares.bind(this)
   }
@@ -19,7 +20,8 @@ class NewBingoCard extends React.Component {
 
   createNewCard(e) {
     e.preventDefault();
-    this.setState({submitted: true})
+    this.setState({submitted: true,
+                  showAddFriends: true})
     var bingoCard = this.state.squares
     var title = this.refs.title.value
     var cardTextAreas = document.getElementsByClassName('text-center')
@@ -57,6 +59,7 @@ class NewBingoCard extends React.Component {
             </table>
             {this.state.showSubmit ? <input className="btn btn-default" type="submit" value="create"/> : null}
           </form>
+          {this.state.showAddFriends ? <NewGameAddFriends /> : null}
       </section>
       );
   }
