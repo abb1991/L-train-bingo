@@ -9,7 +9,6 @@ class StaticController < ApplicationController
         e = {game.id => game.cards}
         @cards = @cards.merge(e)
       end
-      binding.pry
       render component: 'App', props: {user: @user, games: @games, cards: @cards, friends: @friends, logged_in: true}
     else
       @user = User.new
