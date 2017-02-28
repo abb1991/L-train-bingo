@@ -31,7 +31,7 @@ class SearchFriends extends React.Component {
       {this.state.showFriend ?
         <div>
           <h2>{this.state.searchFriend.name}</h2>
-          <a href='/' onClick={this.inviteFriend}>add friend</a>
+          <NewInviteFriend friend={this.state.searchFriend}inviteFriend={this.inviteFriend}/>
         </div>
         :
         <form onSubmit={this.searchFriends}>
