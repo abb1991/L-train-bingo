@@ -37,6 +37,17 @@ class UsersController < ApplicationController
       render json: {error: 'Could not find your friend'}
     end
   end
+
+  def friend
+    @friend = User.find_by(id: params[:user][:id])
+    @friendship = Friendship.new(user_id: current_user.id, friend_id: @friend.id)
+    if !@friend.nil? && @friendship.save
+      render json: {friend: @friend}
+    else
+      render json: {error: 'something went wrong'}
+    end
+  end
+
   private
 
   def permit_params_new

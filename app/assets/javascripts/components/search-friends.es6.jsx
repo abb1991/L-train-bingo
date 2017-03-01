@@ -6,6 +6,7 @@ class SearchFriends extends React.Component {
       showFriend: false
     }
     this.searchFriends = this.searchFriends.bind(this)
+    this.inviteFriend = this.inviteFriend.bind(this)
   }
 
   searchFriends(e){
@@ -23,7 +24,14 @@ class SearchFriends extends React.Component {
 
   inviteFriend(e) {
     e.preventDefault();
-    console.log('invited')
+    var friend = this.state.searchFriend
+    $.ajax({
+      url: '/users/friend',
+      method: 'POST',
+      data: {user: friend}
+    }).done((response) => {
+      console.log(response);
+    })
   }
   render(){
     return(

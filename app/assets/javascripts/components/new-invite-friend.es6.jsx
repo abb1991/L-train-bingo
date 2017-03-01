@@ -8,7 +8,10 @@ class NewInviteFriend extends React.Component {
 
   render(){
     return (
-      <a href='/' onClick={this.props.inviteFriend}>{this.props.friend.name}</a>
+      <div>
+        <p>{this.props.friend.name}</p>
+        <button onClick={this.props.inviteFriend} type="button" className=".btn-default">add</button>
+      </div>
       )
   }
 }
