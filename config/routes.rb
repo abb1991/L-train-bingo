@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post '/cards' => 'cards#new'
   get '/users/logout' => 'users#logout'
   post '/users/find' => 'users#find'
+  post '/users/friend' => 'users#friend'
 
 end
