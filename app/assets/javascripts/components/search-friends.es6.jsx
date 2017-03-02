@@ -30,7 +30,7 @@ class SearchFriends extends React.Component {
       method: 'POST',
       data: {user: friend}
     }).done((response) => {
-      console.log(response);
+      this.props.addFriend(response)
     })
   }
   render(){
@@ -44,7 +44,7 @@ class SearchFriends extends React.Component {
         :
         <form onSubmit={this.searchFriends}>
           <input  className="form-control" placeholder="search for friends"/>
-          <input type="submit" value="find friend" />
+          <input className="btn" type="submit" value="find friend" />
         </form>
         }
       </div>
