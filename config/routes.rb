@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/users/logout' => 'users#logout'
   post '/users/find' => 'users#find'
   post '/users/friend' => 'users#friend'
-
+  delete '/users/:id' => 'users#delete'
 end
