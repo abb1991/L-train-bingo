@@ -48,6 +48,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def delete
+    @user = User.find_by(id: params[:id])
+    friendships = current_user.friendships
+    @remaining_friendships = friendships.map do |friendship|
+      if friendship.friend_id == @user.id
+        friendship.delete
+      end
+    end
+    if @remaining_friendships.length == 0
+      @remaining_friendships = [{name: "search for your friends!"}]
+    end
+    render json: {friends: @remaining_friendships}
+  end
+
   private
 
   def permit_params_new
