@@ -3,6 +3,9 @@ class StaticController < ApplicationController
     if logged_in?
       @user = current_user
       @friends = @user.friends
+      if @friends.length == 0
+        @friends = [{name: "search for your friends!", noFriends: true}]
+      end
       @games = @user.games
       @cards = {}
       @games.each do |game|
