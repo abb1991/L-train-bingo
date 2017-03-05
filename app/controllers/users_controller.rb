@@ -57,7 +57,7 @@ class UsersController < ApplicationController
       end
     end
     if @remaining_friendships.length == 0
-      @remaining_friendships = [{name: "search for your friends!"}]
+      @remaining_friendships = [{name: "search for your friends!", noFriends: true}]
     end
     render json: {friends: @remaining_friendships}
   end
