@@ -7,9 +7,9 @@ class UserPage extends React.Component {
     this.addFriend = this.addFriend.bind(this)
   }
 
-  addFriend(friend) {
+  addFriend(obj) {
     var newFriends = this.state.friends
-    newFriends.push(friend)
+    newFriends.push(obj.friend)
     this.setState({friends: newFriends})
   }
 
