@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     @friend = User.find_by(id: params[:user][:id])
     @friendship = Friendship.new(user_id: current_user.id, friend_id: @friend.id)
     if !@friend.nil? && @friendship.save
-      render json: {friend: @friend}
+        render json: {friend: @friend}
     else
       render json: {error: 'something went wrong'}
     end
@@ -56,10 +56,8 @@ class UsersController < ApplicationController
         friendship.delete
       end
     end
-    if @remaining_friendships.length == 0
-      @remaining_friendships = [{name: "search for your friends!", noFriends: true}]
-    end
-    render json: {friends: @remaining_friendships}
+    @friends = current_user.friends
+    render json: {friends: @friends}
   end
 
   private
