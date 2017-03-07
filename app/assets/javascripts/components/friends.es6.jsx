@@ -2,7 +2,7 @@ class Friends extends React.Component {
   constructor(props){
     super();
     this.state={
-      friends: props.friends
+      friends: props.friends || []
     }
     this.deleteFriend = this.deleteFriend.bind(this)
   }
@@ -28,8 +28,8 @@ class Friends extends React.Component {
       return (
         <div>
           <h2>Friends list</h2>
-          {this.state.friends[0].noFriends ?
-            <h2>{this.state.friends[0].name}</h2>
+          {this.state.friends.length < 1 ?
+            <h2>search for your friends!</h2>
             :
           <ul>
             {this.state.friends.map(function(friend){
