@@ -31,6 +31,7 @@ class SearchFriends extends React.Component {
       data: {user: friend}
     }).done((response) => {
       this.props.addFriend(response)
+      this.setState({showFriend: false})
     })
   }
   render(){
