@@ -5,7 +5,7 @@ class NewBingoCard extends React.Component {
       showSubmit: true,
       submitted: false,
       squares: {},
-      showAddFriends: false
+      showAddFriends: true
     }
     this.updateSquares = this.updateSquares.bind(this)
   }
