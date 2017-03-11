@@ -5,7 +5,8 @@ class NewBingoCard extends React.Component {
       showSubmit: true,
       submitted: false,
       squares: {},
-      showAddFriends: true
+      showAddFriends: true,
+      id: 1
     }
     this.updateSquares = this.updateSquares.bind(this)
   }
@@ -59,7 +60,8 @@ class NewBingoCard extends React.Component {
             </table>
             {this.state.showSubmit ? <input className="btn btn-default" type="submit" value="create"/> : null}
           </form>
-          {this.state.showAddFriends ? <NewGameAddFriends /> : null}
+          {this.state.showAddFriends ?
+            <NewGameAddFriends id={this.state.id} /> : null}
       </section>
       );
   }

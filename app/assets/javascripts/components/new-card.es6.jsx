@@ -7,7 +7,7 @@ class NewCard extends React.Component {
 
   handleKeyUp(e) {
     var bingoCard = {card: this.refs.bingoText.value,
-                  id: this.props.id}
+                     id: this.props.id}
     this.props.onUpdateSquares(bingoCard)
   }
 
