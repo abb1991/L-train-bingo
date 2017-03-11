@@ -4,19 +4,29 @@ class NewGameAddFriends extends React.Component{
     this.state={
 
     }
+    this.addFriend = this.addFriend.bind(this)
   }
 
   addFriend(e){
     e.preventDefault();
-    console.log("clicked")
+
+    var name = this.refs.friend.value
+    var id = this.props.id
+    $.ajax({
+      url: '/games/add-friend',
+      method: 'PUT',
+      data: {friend: name, game: id}
+    }).done((response)=> {
+      console.log(response)
+    })
   }
 
   render(){
     return(
         <div>
-          <form>
-            <input type="text" placeholder="add friends"/>
-            <input onSubmit={this.addFriend} type="button" value="add" />
+          <form onSubmit={this.addFriend}>
+            <input ref="friend" type="text" placeholder="add friends"/>
+            <input type="submit" value="add" />
           </form>
         </div>
       )
