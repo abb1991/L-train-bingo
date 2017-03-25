@@ -3,7 +3,6 @@ class CardsController < ApplicationController
   def new
     squares =  params[:card][:newCard].to_unsafe_h
     Game.create(creator_id: current_user.id, title: params[:card][:title])
-    binding.pry
     @games = current_user.games
     @cards = {}
     @games.each do |game|
