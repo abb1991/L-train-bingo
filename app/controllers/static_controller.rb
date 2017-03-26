@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   def index
     if logged_in?
+      binding.pry
       @user = current_user
       @friends = @user.friends
       if @friends.length == 0

@@ -3,7 +3,7 @@ class BingoCard extends React.Component {
     super(props);
     this.state={
       show: false,
-      mainGame: props.games[0] || []
+      mainGame: props.games[0]
     };
     this.showBoard = this.showBoard.bind(this);
     this.mainGame = this.mainGame.bind(this);
@@ -28,7 +28,7 @@ class BingoCard extends React.Component {
     var self = this
     return (
       <div>
-        {this.props.loggedIn ?
+        {this.props.loggedIn && this.state.mainGame ?
         <Board game={this.state.mainGame} cards={this.props.cards[this.state.mainGame.id]}/> : null }
         {this.props.loggedIn ?
         <ul className="list-group">

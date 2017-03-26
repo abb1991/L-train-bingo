@@ -26,7 +26,7 @@ class App extends React.Component {
     e.preventDefault();
     $.ajax({
       url: '/users/logout',
-      method: 'get',
+      method: 'get'
     })
   }
 
