@@ -24,9 +24,10 @@ class UsersController < ApplicationController
   end
 
   def logout
-    session.delete
+    reset_session
+    @current_user = nil
     @user = User.new
-    render component: 'App', props: {user: @user, loggedIn: false}
+    redirect_to :root
   end
 
   def find

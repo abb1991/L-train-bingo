@@ -2,18 +2,18 @@ class CardsController < ApplicationController
 
   def new
     squares =  params[:card][:newCard].to_unsafe_h
-    Game.create(creator_id: current_user.id, title: params[:card][:title])
+    new_game = Game.create(creator_id: current_user.id, title: params[:card][:title])
+    squares.each do |id, desc|
+      card = Card.new(game_id: new_game.id, description: desc)
+      if !card.save
+        render json: {error: 'Something went wrong'}
+      end
+    end
     @games = current_user.games
     @cards = {}
     @games.each do |game|
       e = {game.id => game.cards}
       @cards = @cards.merge(e)
-    end
-    squares.each do |id, desc|
-      card = Card.new(game_id: @games[0].id, description: desc)
-      if !card.save
-        render json: {error: 'Something went wrong'}
-      end
     end
     render json: {cards: @cards, games: @games}
   end

@@ -6,16 +6,14 @@ class Board extends React.Component {
     };
   }
   render(){
-    debugger;
     return(
       <div className="card">
-          { this.props.game ?
-            {this.props.cards.map(function(card, i) {
-              return <Card info={card} key={i} />
-              })
-            }
-          : null}
-        </div>
+        { this.props.game ?
+          this.props.cards.map(function(card, i) {
+            return <Card info={card} key={i} />
+            })
+        : null}
+      </div>
       )
   }
 }
